@@ -1,4 +1,4 @@
-package com.service;
+package com.robot.service;
 
 import com.robot.beans.Person;
 

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions targetNamespace="http://service.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.com" xmlns:intf="http://service.com" xmlns:tns1="http://beans.robot.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions targetNamespace="http://service.robot.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.robot.com" xmlns:intf="http://service.robot.com" xmlns:tns1="http://beans.robot.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <!--WSDL created by Apache Axis version: 1.4
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
-  <schema elementFormDefault="qualified" targetNamespace="http://service.com" xmlns="http://www.w3.org/2001/XMLSchema">
+  <schema elementFormDefault="qualified" targetNamespace="http://service.robot.com" xmlns="http://www.w3.org/2001/XMLSchema">
    <import namespace="http://beans.robot.com"/>
-   <element name="deletePerson">
+   <element name="getPerson">
     <complexType>
      <sequence>
       <element name="id" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>
-   <element name="deletePersonResponse">
+   <element name="getPersonResponse">
     <complexType>
      <sequence>
-      <element name="deletePersonReturn" type="xsd:boolean"/>
+      <element name="getPersonReturn" type="tns1:Person"/>
      </sequence>
     </complexType>
    </element>
@@ -43,17 +43,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="getPerson">
+   <element name="deletePerson">
     <complexType>
      <sequence>
       <element name="id" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>
-   <element name="getPersonResponse">
+   <element name="deletePersonResponse">
     <complexType>
      <sequence>
-      <element name="getPersonReturn" type="tns1:Person"/>
+      <element name="deletePersonReturn" type="xsd:boolean"/>
      </sequence>
     </complexType>
    </element>
@@ -69,49 +69,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="deletePersonRequest">
+   <wsdl:message name="getPersonRequest">
 
-      <wsdl:part element="impl:deletePerson" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="getAllPersonsRequest">
-
-      <wsdl:part element="impl:getAllPersons" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="deletePersonResponse">
-
-      <wsdl:part element="impl:deletePersonResponse" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="addPersonResponse">
-
-      <wsdl:part element="impl:addPersonResponse" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="getAllPersonsResponse">
-
-      <wsdl:part element="impl:getAllPersonsResponse" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="addPersonRequest">
-
-      <wsdl:part element="impl:addPerson" name="parameters">
+      <wsdl:part element="impl:getPerson" name="parameters">
 
       </wsdl:part>
 
@@ -125,9 +85,49 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="getPersonRequest">
+   <wsdl:message name="addPersonRequest">
 
-      <wsdl:part element="impl:getPerson" name="parameters">
+      <wsdl:part element="impl:addPerson" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deletePersonResponse">
+
+      <wsdl:part element="impl:deletePersonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllPersonsResponse">
+
+      <wsdl:part element="impl:getAllPersonsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addPersonResponse">
+
+      <wsdl:part element="impl:addPersonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllPersonsRequest">
+
+      <wsdl:part element="impl:getAllPersons" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deletePersonRequest">
+
+      <wsdl:part element="impl:deletePerson" name="parameters">
 
       </wsdl:part>
 
@@ -135,13 +135,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="PersonServiceImpl">
 
-      <wsdl:operation name="deletePerson">
+      <wsdl:operation name="getPerson">
 
-         <wsdl:input message="impl:deletePersonRequest" name="deletePersonRequest">
+         <wsdl:input message="impl:getPersonRequest" name="getPersonRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:deletePersonResponse" name="deletePersonResponse">
+         <wsdl:output message="impl:getPersonResponse" name="getPersonResponse">
 
        </wsdl:output>
 
@@ -171,13 +171,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="getPerson">
+      <wsdl:operation name="deletePerson">
 
-         <wsdl:input message="impl:getPersonRequest" name="getPersonRequest">
+         <wsdl:input message="impl:deletePersonRequest" name="deletePersonRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:getPersonResponse" name="getPersonResponse">
+         <wsdl:output message="impl:deletePersonResponse" name="deletePersonResponse">
 
        </wsdl:output>
 
@@ -189,17 +189,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="deletePerson">
+      <wsdl:operation name="getPerson">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="deletePersonRequest">
+         <wsdl:input name="getPersonRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="deletePersonResponse">
+         <wsdl:output name="getPersonResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -243,17 +243,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="getPerson">
+      <wsdl:operation name="deletePerson">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="getPersonRequest">
+         <wsdl:input name="deletePersonRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="getPersonResponse">
+         <wsdl:output name="deletePersonResponse">
 
             <wsdlsoap:body use="literal"/>
 

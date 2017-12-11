@@ -1,4 +1,4 @@
-package com.service;
+package com.robot.service;
 
 import java.util.HashMap;
 import java.util.Map;

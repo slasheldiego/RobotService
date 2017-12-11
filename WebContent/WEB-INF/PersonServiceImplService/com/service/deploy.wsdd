@@ -7,7 +7,7 @@
       <parameter name="wsdlServiceElement" value="PersonServiceImplService"/>
       <parameter name="schemaQualified" value="http://beans.robot.com,http://service.com"/>
       <parameter name="wsdlServicePort" value="PersonServiceImpl"/>
-      <parameter name="className" value="com.service.PersonServiceImpl"/>
+      <parameter name="className" value="com.robot.service.PersonServiceImpl"/>
       <parameter name="wsdlPortType" value="PersonServiceImpl"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://service.com" xmlns:retNS="http://service.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deletePerson" qname="operNS:deletePerson" returnQName="retNS:deletePersonReturn" returnType="rtns:boolean" soapAction="">

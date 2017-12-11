@@ -22,26 +22,41 @@
  <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
  <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
  <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
- <ns1:service name="PersonServiceImpl" provider="java:RPC" style="wrapped" use="literal">
-  <ns2:operation name="deletePerson" qname="ns1:deletePerson" returnQName="ns1:deletePersonReturn" returnType="xsd:boolean" soapAction="" xmlns:ns1="http://service.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
-   <ns2:parameter qname="ns1:id" type="xsd:int"/>
+ <ns1:service name="RobotServicesImpl" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="move" qname="ns1:move" returnQName="ns1:moveReturn" returnType="xsd:boolean" soapAction="" xmlns:ns1="http://service.robot.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:x" type="xsd:float"/>
+   <ns2:parameter qname="ns1:y" type="xsd:float"/>
+   <ns2:parameter qname="ns1:z" type="xsd:float"/>
   </ns2:operation>
-  <ns1:operation name="addPerson" qname="ns2:addPerson" returnQName="ns2:addPersonReturn" returnType="xsd:boolean" soapAction="" xmlns:ns2="http://service.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns2:p" type="ns3:Person" xmlns:ns3="http://beans.robot.com"/>
+  <ns1:parameter name="allowedMethods" value="move"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="RobotServicesImpl"/>
+  <ns1:parameter name="className" value="com.robot.service.RobotServicesImpl"/>
+  <ns1:parameter name="wsdlServicePort" value="RobotServicesImpl"/>
+  <ns1:parameter name="schemaQualified" value="http://service.robot.com"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://service.robot.com"/>
+  <ns1:parameter name="wsdlServiceElement" value="RobotServicesImplService"/>
+ </ns1:service>
+ <ns1:service name="PersonServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="getPerson" qname="ns2:getPerson" returnQName="ns2:getPersonReturn" returnType="ns3:Person" soapAction="" xmlns:ns2="http://service.robot.com" xmlns:ns3="http://beans.robot.com">
+   <ns1:parameter qname="ns2:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:operation name="getAllPersons" qname="ns4:getAllPersons" returnQName="ns4:getAllPersonsReturn" returnType="ns5:Person" soapAction="" xmlns:ns4="http://service.com" xmlns:ns5="http://beans.robot.com"/>
-  <ns1:operation name="getPerson" qname="ns6:getPerson" returnQName="ns6:getPersonReturn" returnType="ns7:Person" soapAction="" xmlns:ns6="http://service.com" xmlns:ns7="http://beans.robot.com">
-   <ns1:parameter qname="ns6:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="addPerson" qname="ns4:addPerson" returnQName="ns4:addPersonReturn" returnType="xsd:boolean" soapAction="" xmlns:ns4="http://service.robot.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:p" type="ns5:Person" xmlns:ns5="http://beans.robot.com"/>
+  </ns1:operation>
+  <ns1:operation name="getAllPersons" qname="ns6:getAllPersons" returnQName="ns6:getAllPersonsReturn" returnType="ns7:Person" soapAction="" xmlns:ns6="http://service.robot.com" xmlns:ns7="http://beans.robot.com"/>
+  <ns1:operation name="deletePerson" qname="ns8:deletePerson" returnQName="ns8:deletePersonReturn" returnType="xsd:boolean" soapAction="" xmlns:ns8="http://service.robot.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns8:id" type="xsd:int"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="deletePerson getPerson getAllPersons addPerson"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="PersonServiceImpl"/>
-  <ns1:parameter name="className" value="com.service.PersonServiceImpl"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://beans.robot.com,http://service.robot.com"/>
   <ns1:parameter name="wsdlServicePort" value="PersonServiceImpl"/>
-  <ns1:parameter name="schemaQualified" value="http://beans.robot.com,http://service.com"/>
-  <ns1:parameter name="wsdlTargetNamespace" value="http://service.com"/>
+  <ns1:parameter name="className" value="com.robot.service.PersonServiceImpl"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://service.robot.com"/>
   <ns1:parameter name="wsdlServiceElement" value="PersonServiceImplService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns8:Person" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.robot.beans.Person" xmlns:ns8="http://beans.robot.com"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns9:Person" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.robot.beans.Person" xmlns:ns9="http://beans.robot.com"/>
  </ns1:service>
  <ns1:service name="AdminService" provider="java:MSG">
   <ns1:parameter name="allowedMethods" value="AdminService"/>

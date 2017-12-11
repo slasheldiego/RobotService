@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.robot.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.robot.com" xmlns:intf="http://service.robot.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.robot.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="move">
+    <complexType>
+     <sequence>
+      <element name="x" type="xsd:float"/>
+      <element name="y" type="xsd:float"/>
+      <element name="z" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="moveResponse">
+    <complexType>
+     <sequence>
+      <element name="moveReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="moveRequest">
+
+      <wsdl:part element="impl:move" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="moveResponse">
+
+      <wsdl:part element="impl:moveResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="RobotServicesImpl">
+
+      <wsdl:operation name="move">
+
+         <wsdl:input message="impl:moveRequest" name="moveRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:moveResponse" name="moveResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="RobotServicesImplSoapBinding" type="impl:RobotServicesImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="move">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="moveRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="moveResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="RobotServicesImplService">
+
+      <wsdl:port binding="impl:RobotServicesImplSoapBinding" name="RobotServicesImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/RobotService/services/RobotServicesImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
