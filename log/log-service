@@ -1,0 +1,24 @@
+2017-12-14 23:39:03 WARN  JavaUtils:1308 - Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+2017-12-14 23:40:45 WARN  JavaUtils:1308 - Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+2017-12-14 23:40:54 WARN  JavaUtils:1308 - Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+2017-12-14 23:41:45 WARN  JavaUtils:1308 - Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+2017-12-14 23:42:03 INFO  RobotServicesImpl:20 - Se inicio socket ...
+2017-12-14 23:42:03 INFO  RobotServicesImpl:41 - conectado
+2017-12-14 23:42:13 INFO  RobotServicesImpl:20 - Se inicio socket ...
+2017-12-14 23:42:13 INFO  RobotServicesImpl:41 - conectado
+2017-12-14 23:42:46 WARN  JavaUtils:1308 - Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+2017-12-14 23:42:50 INFO  RobotServicesImpl:20 - Se inicio socket ...
+2017-12-14 23:42:50 INFO  RobotServicesImpl:41 - conectado
+2017-12-14 23:43:01 INFO  RobotServicesImpl:20 - Se inicio socket ...
+2017-12-14 23:43:01 INFO  RobotServicesImpl:41 - conectado
+2017-12-14 23:45:36 WARN  JavaUtils:1308 - Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+2017-12-14 23:45:38 INFO  RobotServicesImpl:28 - conectado
+2017-12-14 23:45:58 WARN  JavaUtils:1308 - Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+2017-12-14 23:46:12 INFO  RobotServicesImpl:28 - conectado
+2017-12-14 23:46:22 INFO  RobotServicesImpl:28 - conectado
+2017-12-14 23:47:39 WARN  JavaUtils:1308 - Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+2017-12-14 23:47:44 WARN  JavaUtils:1308 - Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+2017-12-14 23:47:51 INFO  RobotServicesImpl:28 - conectado
+2017-12-14 23:48:08 INFO  RobotServicesImpl:28 - conectado
+2017-12-14 23:48:35 WARN  JavaUtils:1308 - Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+2017-12-14 23:48:36 INFO  RobotServicesImpl:28 - conectado

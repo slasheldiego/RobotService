@@ -12,19 +12,6 @@ public class RobotServicesImpl implements RobotServices {
 	
 	final static Logger logger = Logger.getLogger(RobotServicesImpl.class);
 	
-	private Socket socket;
-	
-	RobotServicesImpl(){
-		try {
-			socket = new Socket ("localhost", 25557);
-			logger.debug("Se inicio socket ...");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			logger.error(e);
-		}
-	}
-
 	@Override
 	public boolean move(float x, float y, float z) {
 		// TODO Auto-generated method stub
@@ -36,14 +23,14 @@ public class RobotServicesImpl implements RobotServices {
 		try
         {
             /* Se crea el socket cliente */
-            //Socket socket = new Socket ("localhost", 25557);
+            Socket socket = new Socket ("localhost", 25557);
 			//Socket socket = new Socket ("localhost", 55000);
-            System.out.println ("conectado");
+			logger.info("conectado");
 
             PrintStream ps = new PrintStream(socket.getOutputStream());
             
             String s = "y";
-            ps.write(s.getBytes("UTF-8"));
+            /*ps.write(s.getBytes("UTF-8"));
             ps.flush();
             Thread.sleep(1000);
             ps.write(String.valueOf(x).getBytes("UTF-8"));
@@ -57,7 +44,9 @@ public class RobotServicesImpl implements RobotServices {
             ps.write(s.getBytes("UTF-8"));
             ps.flush();
             
-            Thread.sleep(1000000);
+            Thread.sleep(1000000);*/
+            
+            ps.println(s);
             
             ps.close();
             socket.close();
