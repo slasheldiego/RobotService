@@ -1,11 +1,29 @@
 package com.robot.service;
 
+import java.io.IOException;
 import java.io.PrintStream;
 import java.net.Socket;
+
+import org.apache.log4j.Logger;
 
 import com.robot.beans.Robot;
 
 public class RobotServicesImpl implements RobotServices {
+	
+	final static Logger logger = Logger.getLogger(RobotServicesImpl.class);
+	
+	private Socket socket;
+	
+	RobotServicesImpl(){
+		try {
+			socket = new Socket ("localhost", 25557);
+			logger.debug("Se inicio socket ...");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			logger.error(e);
+		}
+	}
 
 	@Override
 	public boolean move(float x, float y, float z) {
@@ -19,7 +37,7 @@ public class RobotServicesImpl implements RobotServices {
         {
             /* Se crea el socket cliente */
             //Socket socket = new Socket ("localhost", 25557);
-			Socket socket = new Socket ("localhost", 55000);
+			//Socket socket = new Socket ("localhost", 55000);
             System.out.println ("conectado");
 
             PrintStream ps = new PrintStream(socket.getOutputStream());
